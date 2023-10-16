@@ -3,6 +3,8 @@
 #include <iostream>
 #include <string>
 
+
+//Parent VideoGame Class
 class VideoGame{
     std::string title;
     float price;
@@ -16,7 +18,9 @@ class VideoGame{
     float showPrice();
 };
 
+//Derived ComputerGame class
 class ComputerGame : public VideoGame{
+    //Unique Variable to ComputerGames
     std::string operatingSystem;
 
     public:
@@ -24,7 +28,9 @@ class ComputerGame : public VideoGame{
     void display(); 
 };
 
+//Derived ConsoleGame Class
 class ConsoleGame : public VideoGame{
+    //Unique Variable to ConsoleGames
     std::string console;
 
     public:
