@@ -35,7 +35,7 @@ Complex Complex::operator+(const Complex &equComplex) const{
     tempRealNo = realNo + equComplex.getReal();
     tempImaginaryNo = imaginaryNo + equComplex.getImaginary();
 
-    return Complex(tempImaginaryNo, tempRealNo);
+    return Complex(tempRealNo, tempImaginaryNo);
 };
 
 //subtraction
@@ -48,7 +48,7 @@ Complex Complex::operator-(const Complex &equComplex) const{
     tempImaginaryNo = imaginaryNo - equComplex.getImaginary();
     
 
-    return Complex(tempImaginaryNo, tempRealNo);
+    return Complex(tempRealNo, tempImaginaryNo);
 };
 
 //Multiplication

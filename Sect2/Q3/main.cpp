@@ -55,7 +55,7 @@ void operationMenu(Complex _userComplex, Complex _progComplex){
             break;
             //Complex Subtraction
             case 2:
-            tempComp = _userComplex - _progComplex;
+            tempComp = _progComplex - _userComplex;
             std::cout << "(" << _progComplex.output() << ") - (" << _userComplex.output() << ") = " << tempComp.output() << "\n\n";
             break;
             //Complex Multiplication
