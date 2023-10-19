@@ -2,27 +2,32 @@
 
 #include "header.h"
 #include <iostream>
+#include <string>
 
-
+//Class constructor for Complex number
 Complex::Complex( int newRealNo, int newImaginaryNo){
     realNo = newRealNo;
     imaginaryNo = newImaginaryNo;
 
 };
 
+//Class Real Number retrieval
 int Complex::getReal() const{
     return realNo;
 }
 
+//Class Imaginary number retrieval
 int Complex::getImaginary() const{
     return imaginaryNo;
 }
 
-void Complex::output() const{
-    std::cout << this->getReal() << " + " << this->getImaginary() << "i\n";
+//Equation output for Complex number
+std::string Complex::output() const{
+    return (std::to_string(this->getReal()) + " + " + std::to_string(this->getImaginary()) + "i");
 };
 
-
+//Complex Class operator overload
+//addition
 Complex Complex::operator+(const Complex &equComplex) const{
     int tempImaginaryNo;
     int tempRealNo;
@@ -33,6 +38,7 @@ Complex Complex::operator+(const Complex &equComplex) const{
     return Complex(tempImaginaryNo, tempRealNo);
 };
 
+//subtraction
 Complex Complex::operator-(const Complex &equComplex) const{
     int tempRealNo;
     int tempImaginaryNo;
@@ -45,15 +51,15 @@ Complex Complex::operator-(const Complex &equComplex) const{
     return Complex(tempImaginaryNo, tempRealNo);
 };
 
+//Multiplication
 Complex Complex::operator*(const Complex &equComplex) const{
     int tempRealNo;
     int tempImaginaryNo;
 
-    tempRealNo = realNo - equComplex.getReal();
-    tempImaginaryNo = imaginaryNo - equComplex.getImaginary();
+    tempRealNo = (realNo * equComplex.getReal()) - (imaginaryNo * equComplex.getImaginary());
+    tempImaginaryNo = (realNo * equComplex.getImaginary()) + (imaginaryNo * equComplex.getReal());
 
-
-    return Complex(tempImaginaryNo, tempRealNo);
+    return Complex(tempRealNo, tempImaginaryNo);
 };
 
 
