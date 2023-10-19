@@ -4,14 +4,17 @@
 #include <string>
 #include <iostream>
 
+//Global variable for count for incrementing
 int Cost::count = 0;
 
+//Cost Class initialisation
 Cost::Cost(int newDollar, int newCents){
     dollar = newDollar;
     cents = newCents;
     count++;
 };
 
+//multi functional readCost method
 int Cost::readCost(char opt){
     if(opt == 'D'){
         return dollar;
@@ -22,14 +25,17 @@ int Cost::readCost(char opt){
     }
 };
 
+//showcost method
 void Cost::showCost(){
     std::cout << "$" << this->dollar << "." << this->cents << "\n";
 };
 
+//showcount method
 int Cost::showCount(){
     return count;
 };
 
+//Calculate the total cost of all objects created
 std::string Cost::computeTotalCost(std::vector<Cost> tcost){
     int totalDollars = 0;
     int totalCents = 0;

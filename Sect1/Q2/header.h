@@ -3,12 +3,14 @@
 #include <vector>
 #include <string>
 
+//Cost class declaration
 class Cost{
     private:
     int dollar;
     int cents;
     static int count;
 
+    //public methods
     public:
     Cost(int newDollar, int newCents);
     int readCost(char opt);
